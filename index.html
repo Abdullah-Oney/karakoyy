@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123a30">
+  <meta name="description" content="Karaköy Güllüoğlu 1843 — kutunuza özel dijital hediye deneyimi.">
+  <title>Sana Özel Bir Kutu — Karaköy Güllüoğlu 1843</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-grain" aria-hidden="true"></div>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand-mark" href="#top" aria-label="Karaköy Güllüoğlu ana sayfa">
+        <img src="assets/gulluoglu-logo.png" alt="Karaköy Güllüoğlu 1843 — Nadir Güllü">
+      </a>
+      <span class="presentation-label"><span class="label-dot"></span> ÖZEL KUTU DENEYİMİ</span>
+    </header>
+
+    <section class="intro" id="top">
+      <p class="eyebrow">1843'TEN BERİ · KARAKÖY'DEN SEVGİYLE</p>
+      <h1>Bu kutuda <em>sana</em> özel bir şey var.</h1>
+      <p class="intro-copy">Telefonunu yaklaştır. Kutunun üzerindeki hikâye sana özel bir mesaja dönüşsün.</p>
+    </section>
+
+    <section class="experience" aria-label="Kişiye özel kutu animasyonu">
+      <div class="stage-frame" id="stageFrame">
+        <canvas id="sceneCanvas" aria-label="Karaköy illüstrasyonunun kişiye özel isim kartına dönüştüğü animasyon"></canvas>
+        <div class="stage-topline">
+          <span class="stage-chip"><span class="chip-star">✳</span> KARAKÖY 1843</span>
+          <span class="stage-chip stage-chip-right">SİZE ÖZEL HAZIRLANDI</span>
+        </div>
+        <div class="stage-bottomline" id="stageHint">Kutunuzun hikâyesi hazırlanıyor</div>
+        <div class="stage-shimmer" aria-hidden="true"></div>
+      </div>
+      <div class="stage-controls">
+        <button class="text-button" id="replayButton" type="button"><span aria-hidden="true">↻</span> Animasyonu yeniden oynat</button>
+        <span class="animation-note"><span class="live-dot"></span> Yaklaşık 6 saniyelik kutu deneyimi</span>
+      </div>
+    </section>
+
+    <section class="personal-gift" id="personalGift" aria-live="polite">
+      <div class="section-kicker">KUTUNUZUN KİŞİSEL İMZASI</div>
+      <h2 id="personalHeading">Kenan</h2>
+      <p id="personalSubline">Bu kutu sizin için özenle hazırlandı.</p>
+      <div class="signature-card">
+        <canvas id="exportPreview" width="1500" height="640" aria-label="Şeffaf arka planlı isim ve Güllüoğlu logosu önizlemesi"></canvas>
+      </div>
+      <div class="download-actions">
+        <button class="primary-button" id="downloadPng" type="button"><span aria-hidden="true">↓</span> İsminizi ve logoyu indirin</button>
+        <button class="secondary-button" id="downloadVideo" type="button"><span aria-hidden="true">▶</span> Animasyonu video olarak indir</button>
+      </div>
+      <p class="download-caption">PNG dosyası şeffaf arka planlıdır. Yalnızca kişisel yazı ve marka logosu bulunur.</p>
+    </section>
+
+    <section class="share-section">
+      <div class="share-heading">
+        <span class="section-kicker">KARAKÖY'DEN BİR HATIRA</span>
+        <h2>Bu güzel anı paylaşın.</h2>
+      </div>
+      <div class="share-grid">
+        <button class="share-card" id="instagramShare" type="button">
+          <span class="share-icon instagram-icon" aria-hidden="true">◎</span>
+          <span><strong>Instagram'da paylaş</strong><small>Bu kutunun hatırasını paylaşın</small></span>
+          <span class="share-arrow" aria-hidden="true">↗</span>
+        </button>
+        <a class="share-card" href="https://search.google.com/local/writereview?placeid=ChIJ9XlKFOi5yhQR2Bo2XTkPPvA" target="_blank" rel="noopener noreferrer">
+          <span class="share-icon google-icon" aria-hidden="true">G</span>
+          <span><strong>Google'da değerlendirin</strong><small>Deneyiminizi bizimle paylaşın</small></span>
+          <span class="share-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <p class="honest-note">Yorumunuz tamamen size aittir. Her türlü görüşünüz bizim için kıymetlidir.</p>
+    </section>
+
+    <details class="demo-panel" id="demoPanel">
+      <summary><span class="demo-summary-icon">✳</span><span><strong>Sunum demosunu kişiselleştir</strong><small>İsim veya hediye notu örneğini değiştirin</small></span><span class="summary-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="demo-content">
+        <div class="mode-switch" role="group" aria-label="Kutu türü">
+          <button type="button" class="mode-button is-active" data-mode="self" aria-pressed="true">Kendim için</button>
+          <button type="button" class="mode-button" data-mode="gift" aria-pressed="false">Hediye olarak</button>
+        </div>
+        <label class="field-label" for="recipientName">Alıcının adı</label>
+        <input id="recipientName" class="text-input" maxlength="28" value="Kenan" autocomplete="off" placeholder="Örn. Kenan">
+        <div id="giftFields" class="gift-fields" hidden>
+          <label class="field-label" for="giftMessage">Hediye notu</label>
+          <textarea id="giftMessage" class="text-input text-area" maxlength="150" rows="3">İyi ki doğdun. Bu güzel lezzet, güzel günlerine eşlik etsin.</textarea>
+          <label class="field-label" for="senderName">Gönderen</label>
+          <input id="senderName" class="text-input" maxlength="28" value="Sevgiler, Elif" autocomplete="off">
+        </div>
+        <div class="demo-presets">
+          <span>Hızlı örnek:</span>
+          <button type="button" class="preset-chip" data-name="Kenan">Kenan</button>
+          <button type="button" class="preset-chip" data-name="Nadir">Nadir</button>
+          <button type="button" class="preset-chip" data-name="Ayşe">Ayşe</button>
+        </div>
+        <button class="apply-button" id="applyPersonalization" type="button">Önizlemeyi güncelle <span aria-hidden="true">→</span></button>
+        <p class="demo-footnote">Bu alan yalnızca sunum demosu içindir. Gerçek siparişlerde mesaj, siparişe özel güvenli bağlantı üzerinden yüklenir.</p>
+      </div>
+    </details>
+
+    <footer class="footer">
+      <img src="assets/gulluoglu-logo.png" alt="Karaköy Güllüoğlu" class="footer-logo">
+      <p>1843'ten beri, Karaköy'den.</p>
+      <span>© Karaköy Güllüoğlu · Dijital kutu deneyimi konsepti</span>
+    </footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
